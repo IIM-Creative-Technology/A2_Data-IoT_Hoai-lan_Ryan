@@ -23,7 +23,7 @@ app.post("/post", (req,res) => {
     res.send({"data":"vous êtes sur la route post"});
     const sensorData= req.body.data;
     console.log(`la data : ${sensorData}`);
-    res.send('data received')
+    res.send('data received sucessfully')
     //res.json({msg : "vous êtes sur la route post"});
 })
 server.listen( port, () => {
