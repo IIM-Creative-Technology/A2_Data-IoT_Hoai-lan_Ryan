@@ -1,6 +1,6 @@
 from machine import Pin,ADC
 import utime
-import ujson
+import json
 import network
 import urequests
 
@@ -43,9 +43,15 @@ while True:
         joystickStatus = "pressed"
     print("X: " + yStatus + " -- Joystic " + joystickStatus)
     print(str(yValue) +" -- " + str(joyStickValue))
-    # data = {"data":yStatus}
-    # response = urequests.post(url, json=data)
-    utime.sleep(0.1)
+    sensorData = {'sensorData':yStatus}
+    as_json = json.dumps(sensorData)
+    print(sensorData)  # prints '<class 'dict'>'
+    print(type(as_json))  # prints '<class 'str'>'
+    as_object = json.loads(as_json)
+    print(type(as_object))  # prints '<class 'dict'>'
+    # response = urequests.post(url, json=sensorData)
+    # faire comme avec stringify , tout dans un string
+    utime.sleep(0.5)
 
 """
     if yValue>=30000 & yValue<=36000:

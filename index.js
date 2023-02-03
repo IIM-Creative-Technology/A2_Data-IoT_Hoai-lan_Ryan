@@ -20,7 +20,8 @@ app.get("/", (req,res) => {
 
 app.post("/post", (req,res) => {
     console.log(req.body);
-    res.send({"data":"vous êtes sur la route post"});
+    console.log(req.body.data);
+    console.log("vous êtes sur la route post");
     const sensorData= req.body.data;
     console.log(`la data : ${sensorData}`);
     res.send('data received sucessfully')
