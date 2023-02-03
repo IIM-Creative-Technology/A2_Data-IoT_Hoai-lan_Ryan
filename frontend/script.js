@@ -1,6 +1,17 @@
+// socket setup 
+
+// const socketfirst = io.connect()
+// const socket = io('http://localhost:3000');
+
+// socket.on('sendFront', (data) => {
+//     console.log('Button click event received:', data);
+// })
+
+// game
 let character = document.getElementById("character");
 let block = document.getElementById("block");
 let counter=0;
+
 function jump(){
     if(character.classList == "animate"){return}
     character.classList.add("animate");
