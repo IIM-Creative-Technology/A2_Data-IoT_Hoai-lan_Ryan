@@ -52,3 +52,6 @@ $ npm run start
 
 [dataiot.pdf](https://github.com/IIM-Creative-Technology/A2_Data-IoT_Hoai-lan_Ryan/files/10709131/dataiot.pdf)
 
+## The video to see the project in action 
+
+https://youtu.be/e6kMkw6b32w
