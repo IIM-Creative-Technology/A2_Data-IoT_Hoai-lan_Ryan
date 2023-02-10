@@ -41,3 +41,7 @@ $ npm run start
 ![20230203_122809](https://user-images.githubusercontent.com/108990733/218133638-af64c9e0-b1fb-4f5b-a023-45b3c783db88.jpg)
 
 
+
+## The schema of the circuit
+
+![circuit_button](https://user-images.githubusercontent.com/108990733/218135722-91cc514e-955a-438a-9c17-7678efd44624.png)
