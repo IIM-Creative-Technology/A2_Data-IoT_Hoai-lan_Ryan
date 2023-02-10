@@ -1,77 +1,48 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const http = require("http");
-const app = express();
-// const server = http.createServer(app);
-// const path = require("path");
+
 const cors = require('cors');
+const {Server} = require('socket.io');
+const http = require("http");
 let ip = require("ip");
 
-const httpServer = http.createServer(app);
-const {Server} = require('socket.io');
+const app = express();
+const server = http.createServer(app);
 console.dir (ip.address());
+const port = 3000;
 
-let i = 0
-let color = [0,0,0]
-
-app.use(cors())
-app.use(bodyParser.urlencoded({extended: true}));
-const port = 4000
-
-
-const io = new Server(httpServer, {
+const io = new Server(server, {
     cors: {
-        origin : "*",
+        origin: '*'
     }
 })
 
-app.use(express.json())
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors({
+    origins: '*'
+}))
 
-// app.get("/", (req,res) => {
-//     console.log(req.body);
-//     res.status(200).send('Button click event received');    //res.json({msg : "vous êtes sur la route GET"});
-// })
-
-// Socket (requètes des messages)
-io.on('connection', (socket) =>{
-    socket.on('state', (data) =>{
-        io.emit('sendFront', data)
-        console.log(data)
-    })
-})
 
 app.get('/', (req, res) => {
-    console.log('slay');
+    res.json({"hello": "world!"});
+})
+
+app.post('/post', (req, res) => {
+    console.log(req.body);
     //io.emit('button-click', { timestamp: Date.now() });
-    res.status(200).send('Button click event received oui');
+    res.status(200).json({"msg": "Data sent"});
     
 });
 
 
-// ecoute du port
-
-httpServer.listen(port, () =>{
-    console.log(`On écoute sur le port ${port}`)
+io.on("connection", (socket) => {
+    console.log(`New connection: ${socket.id}`);
+    socket.emit("hello", "world");
 })
 
+// ecoute du port
 
-
-// app.post("/post", (req,res) => {
-//     console.log(req.body);
-//     console.log("vous êtes sur la route post");
-//     const sensorData= req.body.data;
-//     console.log(`la data : ${sensorData}`);
-//     res.send('data received sucessfully')
-//     //res.json({msg : "vous êtes sur la route post"});
-// })
-// server.listen( port, () => {
-//     console.log(`The server is actually listened http://localhost:${port}`)
-// })
-// app.post('/api/data', (req, res) => {
-//     console.log(req.body);
-//     res.status(200).send('Data received');
-// });
-
-// app.listen(port, () => {
-//     console.log(`Server running at http://localhost:${port}`);
-// });
+server.listen(port, () =>{
+    console.log(`On écoute sur le port ${port}`)
+})

@@ -1,11 +1,10 @@
-// socket setup 
+const socket = io('http://localhost:3000');
 
-// const socketfirst = io.connect()
-// const socket = io('http://localhost:3000');
+socket.on('connect', () => {
+    console.log('Connected to server');
+});
 
-// socket.on('sendFront', (data) => {
-//     console.log('Button click event received:', data);
-// })
+
 
 // game
 let character = document.getElementById("character");
