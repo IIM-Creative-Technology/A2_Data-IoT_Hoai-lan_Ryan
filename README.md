@@ -42,6 +42,6 @@ $ npm run start
 
 
 
-## The schema of the circuit to connect a button
+## The schema of the circuit to connect a button to the raspberry pi pico
 
 ![circuit_button](https://user-images.githubusercontent.com/108990733/218135722-91cc514e-955a-438a-9c17-7678efd44624.png)
