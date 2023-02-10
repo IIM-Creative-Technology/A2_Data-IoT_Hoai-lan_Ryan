@@ -17,7 +17,9 @@ Before anything, you need to install the following on your machine:
 - Express.js, a framework for building web applications based on Node.js.
 - Socket.io, an event-driven library for real-time web applications.
 - Cors
-
+- body-parser
+- Http
+- Ip
 
 ## How to install the project
 
