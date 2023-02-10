@@ -36,7 +36,7 @@ $ npm install
 $ npm run start
 ```
 
-A picture of our circuit
+## A picture of our circuit
 
 ![20230203_122809](https://user-images.githubusercontent.com/108990733/218133638-af64c9e0-b1fb-4f5b-a023-45b3c783db88.jpg)
 
