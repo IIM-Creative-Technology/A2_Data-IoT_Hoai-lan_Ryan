@@ -33,5 +33,5 @@ $ npm install
 ```
 - Then to start the server, run the following command:
 ```shell
-$ npm run test
+$ npm run start
 ```
