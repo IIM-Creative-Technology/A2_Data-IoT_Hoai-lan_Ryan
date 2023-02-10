@@ -48,5 +48,7 @@ $ npm run start
 
 ![circuit_button](https://user-images.githubusercontent.com/108990733/218135722-91cc514e-955a-438a-9c17-7678efd44624.png)
 
+## To see the summary of our work
+
 [dataiot.pdf](https://github.com/IIM-Creative-Technology/A2_Data-IoT_Hoai-lan_Ryan/files/10709131/dataiot.pdf)
 
